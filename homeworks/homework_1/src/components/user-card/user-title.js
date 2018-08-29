@@ -1,9 +1,6 @@
 import React from 'react';
 
-const UserTitle = (props) => {
-    let user = props.users;
-    return <h3 className="panel-title">{user.fullName}</h3>
-}
-export {
-    UserTitle
+export const UserTitle = props => {
+    let {users} = props;
+    return <h3 className="panel-title">{users.fullName}</h3>
 }

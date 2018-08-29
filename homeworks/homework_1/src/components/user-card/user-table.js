@@ -1,30 +1,28 @@
 import React from 'react';
 
-const UserTable = (props) => {
-    let user = props.users;
+export const UserTable = props => {
+    let {users} = props;
+    let mailto = "mailto:" + users.email;
     return (
         <table className="table table-user-information">
             <tbody>
             <tr>
                 <td>Дата рождения</td>
-                <td>{user.birthdate}</td>
+                <td>{users.birthdate}</td>
             </tr>
             <tr>
                 <td>Пол</td>
-                <td>{user.gender}</td>
+                <td>{users.gender}</td>
             </tr>
             <tr>
                 <td>Адрес</td>
-                <td>{user.address}</td>
+                <td>{users.address}</td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><a href={"mailto:" + user.email}>{user.email}</a></td>
+                <td><a href={mailto}>{users.email}</a></td>
             </tr>
             </tbody>
         </table>
     )
-}
-export {
-    UserTable
 }

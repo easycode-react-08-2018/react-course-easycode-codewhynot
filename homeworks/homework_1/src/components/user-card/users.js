@@ -1,4 +1,4 @@
-const users = [
+export const usersDB = [
     {
         id: 1,
         fullName: 'Иванов Иван',
@@ -27,7 +27,3 @@ const users = [
         email: 'ivanov@mail.ru'
     }
 ];
-
-export {
-    users
-}

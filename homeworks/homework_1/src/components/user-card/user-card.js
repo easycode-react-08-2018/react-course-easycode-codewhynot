@@ -4,8 +4,7 @@ import {UserTitle} from './user-title';
 import {UserAvatar} from './user-avatar';
 
 
-
-const UserCard = props => {
+export const UserCard = props => {
     return props.users.map(user => {
         return (
             <div className="panel panel-info" key={'user' + user.id}>
@@ -28,8 +27,4 @@ const UserCard = props => {
             </div>
         )
     })
-}
-
-export {
-    UserCard
 }

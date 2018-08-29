@@ -1,9 +1,6 @@
 import React from 'react';
 
-const UserAvatar = (props) => {
-    let user = props.users;
-    return <img src={user.avatarUrl} className="pull-left"/>
-}
-export {
-    UserAvatar
+export const UserAvatar = props => {
+    let {users} = props;
+    return <img src={users.avatarUrl} className="pull-left"/>
 }
