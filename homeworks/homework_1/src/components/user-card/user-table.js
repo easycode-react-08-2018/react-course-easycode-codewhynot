@@ -1,26 +1,26 @@
 import React from 'react';
 
 export const UserTable = props => {
-    let {users} = props;
-    let mailto = "mailto:" + users.email;
+    const {data} = props;
+    let mailto = "mailto:" + data.email;
     return (
         <table className="table table-user-information">
             <tbody>
             <tr>
                 <td>Дата рождения</td>
-                <td>{users.birthdate}</td>
+                <td>{data.birthdate}</td>
             </tr>
             <tr>
                 <td>Пол</td>
-                <td>{users.gender}</td>
+                <td>{data.gender}</td>
             </tr>
             <tr>
                 <td>Адрес</td>
-                <td>{users.address}</td>
+                <td>{data.address}</td>
             </tr>
             <tr>
                 <td>Email</td>
-                <td><a href={mailto}>{users.email}</a></td>
+                <td><a href={mailto}>{data.email}</a></td>
             </tr>
             </tbody>
         </table>

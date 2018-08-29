@@ -10,14 +10,14 @@ let data = [];
 const mountNode = document.getElementById('app');
 
 const clone = () => {
-    ReactDOM.render(<RenderModule users={usersDB}/>, mountNode)
+    ReactDOM.render(<RenderModule usersList={usersDB}/>, mountNode)
 };
 
 const button = <button onClick={clone}>Add user</button>;
 
 const RenderModule = props => {
-    let {users} = props;
-    data.push(<UserCard users={users}/>);
+    const {usersList} = props;
+    data.push(<UserCard data={usersList}/>);
     return (
         <div className={'usersList'}>
             {data.map((val,i) =>{
@@ -30,4 +30,4 @@ const RenderModule = props => {
     )
 };
 
-ReactDOM.render(<RenderModule users={usersDB}/>, mountNode)
+ReactDOM.render(<RenderModule usersList={usersDB}/>, mountNode)
