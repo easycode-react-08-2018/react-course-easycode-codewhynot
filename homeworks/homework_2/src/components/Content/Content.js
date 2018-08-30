@@ -6,8 +6,6 @@ export class Content extends Component {
         super(props)
     }
     render () {
-        return (
-            <h1>Vera</h1>
-        )
+
     }
 }

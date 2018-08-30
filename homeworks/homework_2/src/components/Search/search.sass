@@ -1,0 +1,90 @@
+.search
+  position: absolute
+  height: 140px
+  width: 600px
+  top:  calc(50% - 70px)
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  transition: .5s ease
+  &.isMinimize
+    top: 0
+    .search
+      &_logo
+        left: 0
+        top: calc(50% - 25px)
+        &-content
+          font-size: 26px
+      &_field
+        width: calc(100% - 200px)
+        right: 0
+        input
+          width: 100%
+          height: 45px
+          border-bottom: 2px solid #efb21b
+  &_container
+    background: #2b2b2b
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    transition: 1s ease
+    display: flex
+    justify-content: center
+    &.isMinimize
+      background: #151515
+  &_logo
+    margin: 10px
+    transition: .5s ease
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    width: 150px
+    top: -25px
+    left: calc(50% - 75px)
+    &-content
+      color: #fff
+      display: flex
+      justify-content: center
+      align-items: center
+      font-weight: 300
+      font-size: 35px
+      transition: .5s ease
+      span
+        color: #000
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 0.2rem 0.4rem
+        background: #efb21b
+        font-weight: 400
+        border-radius: 5px
+        margin-left: 5px
+        text-transform: none
+  &_field
+    margin: 10px
+    width: 100%
+    position: absolute
+    transition: .5s ease
+    display: flex
+    justify-content: center
+    input
+      width: 50%
+      height: 40px
+      padding: 5px 10px
+      font-size: 16px
+      border-radius: 5px
+      font-weight: 300
+      border: none
+      transition: .3s ease
+      box-shadow: inset -2px 2px 5px 0px rgba(0,0,0,0.5)
+      &:focus
+        outline: none
+        &::placeholder
+          opacity: 0
+      &::placeholder
+        transition: .3s ease

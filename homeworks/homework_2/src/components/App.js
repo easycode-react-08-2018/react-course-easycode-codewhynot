@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
-import {Header} from './Header/Header'
-import {Content} from './Content/Content'
+import YouSearch from 'youtube-api-search';
+import {Search} from './Search/Search'
 
 export class App extends Component {
     constructor (props) {
         super(props)
+        this.state = {
+            searchIsMinimize: false
+        }
     }
+
     render () {
         return (
             <React.Fragment>
-                <Header/>
-                <Content/>
+                <Search/>
             </React.Fragment>
         )
     }
