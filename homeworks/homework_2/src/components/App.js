@@ -9,7 +9,6 @@ export class App extends Component {
             searchIsMinimize: false
         }
     }
-
     render () {
         return (
             <React.Fragment>

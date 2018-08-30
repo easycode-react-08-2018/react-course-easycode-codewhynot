@@ -1,51 +1,59 @@
+.thumb_background
+  position: fixed
+  z-index: -1
+  width: 100%
+  height: 100%
+  -webkit-background-size: 400%
+  background-size: 400%
+  background-position: center center
+  background-repeat: no-repeat
+  opacity: 0
+  visibility: hidden
+  transition: .25s ease
+  filter: blur(10px)
+  &.visible
+    opacity: 1
+    visibility: visible
+
 .search
   position: absolute
   height: 140px
-  width: 600px
+  width: 100%
+  padding: 0 10px
   top:  calc(50% - 70px)
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  transition: .5s ease
+  transition: .25s ease
   &.isMinimize
     top: 0
     .search
       &_logo
-        left: 0
-        top: calc(50% - 25px)
         &-content
           font-size: 26px
       &_field
-        width: calc(100% - 200px)
-        right: 0
         input
           width: 100%
           height: 45px
           border-bottom: 2px solid #efb21b
   &_container
-    background: #2b2b2b
-    position: absolute
+    background: rgba(20,20,20,0.9)
+    position: fixed
+    z-index: 1
+    overflow: hidden
     width: 100%
     height: 100%
     top: 0
     left: 0
-    transition: 1s ease
+    transition: .25s ease
     display: flex
     justify-content: center
     &.isMinimize
-      background: #151515
+      background: rgba(20,20,20,0.9)
   &_logo
     margin: 10px
-    transition: .5s ease
+    transition: .25s ease
     height: 50px
     display: flex
     align-items: center
     justify-content: center
-    position: absolute
-    width: 150px
-    top: -25px
-    left: calc(50% - 75px)
     &-content
       color: #fff
       display: flex
@@ -53,7 +61,7 @@
       align-items: center
       font-weight: 300
       font-size: 35px
-      transition: .5s ease
+      transition: .25s ease
       span
         color: #000
         display: flex
@@ -68,23 +76,77 @@
   &_field
     margin: 10px
     width: 100%
-    position: absolute
-    transition: .5s ease
+    transition: .25s ease
     display: flex
     justify-content: center
+    flex-wrap: wrap
+    max-width: 600px
+    position: relative
+    margin: 0 auto
+    width: 100%
     input
-      width: 50%
+      width: 300px
       height: 40px
       padding: 5px 10px
       font-size: 16px
       border-radius: 5px
       font-weight: 300
       border: none
-      transition: .3s ease
+      transition: .25s ease
       box-shadow: inset -2px 2px 5px 0px rgba(0,0,0,0.5)
+      border-bottom: 2px solid #efb21b
       &:focus
         outline: none
         &::placeholder
           opacity: 0
       &::placeholder
-        transition: .3s ease
+        transition: .25s ease
+  &_results
+    position: absolute
+    width: 100%
+    height: auto
+    max-height: 350px
+    margin-top: 50px
+    background: #222222
+    padding: 10px
+    border-radius: 5px
+    transition: .25s ease
+    opacity: 0
+    visibility: hidden
+    transform: translate3d(0,30px,0)
+    box-shadow: inset -2px 2px 5px 0px rgba(0,0,0,0.5)
+    border-bottom: 2px solid #efb21b
+    overflow-y: scroll
+
+    &::-webkit-scrollbar
+      width: 0
+    &.show
+      opacity: 1
+      visibility: visible
+      transform: translate3d(0,0,0)
+
+    ul
+      height: 100%
+      li
+        list-style: none
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        background: #efb21b
+        padding: 10px
+        margin-bottom: 5px
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3)
+        font-size: 14px
+        border-radius: 5px
+        font-weight: 400
+        cursor: pointer
+        transition: .25s ease
+        @media screen and (max-width: 600px)
+          font-size: 12px
+        &:hover
+          background: #bf8d11
+        img
+          width: 40px
+          height: auto
+          margin-right: 10px
+          border-radius: 5px
