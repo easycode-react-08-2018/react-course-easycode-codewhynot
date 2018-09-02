@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700')
+
+$mainColor: #25ba97
+$whiteColor: #fff
+*
+  padding: 0
+  margin: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+body
+  font-family: 'Source Sans Pro', sans-serif
+  font-size: 14px
+  background: darken($mainColor,10%)
+
+button
+  padding: 10px 20px
+  background: $mainColor
+  border: none
+  border-radius: 5px
+  color: white
+  text-transform: uppercase
+  box-shadow: 0 3px 0px 0px darken($mainColor,10%)
+  margin: 0 10px
+  cursor: pointer
+  &:hover
+    background: darken($mainColor, 5%)
+  &:focus
+    outline: none
+  &:active
+    background: darken($mainColor, 10%)
+    box-shadow: 0 2px 0px 0px darken($mainColor,10%)
+
+  &.inverse
+    background: white
+    box-shadow: 0 3px 0px 0px darken(white,10%)
+    color: darken($mainColor, 50%)
+    &:hover
+    background: darken(white, 5%)
+    &:active
+      background: darken(white, 10%)
+      box-shadow: 0 2px 0px 0px darken(white,10%)
+
+.container
+  max-width: 1000px
+  margin: 0 auto
+
+.main_wrapper
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  position: fixed
+  transition: .3s ease
+
+
